@@ -1,0 +1,15 @@
+# Env
+.env
+.env.local
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# IDEs
+.vscode/
+.idea/
+
+# Custom deploy files
+*_url.txt
