@@ -10,21 +10,40 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from backend.api import AnalysisResponse, MatchResult
+<<<<<<< HEAD
 from ml.clip_engine import CLIPEngine
+=======
+from ml.clip_engine import CLIPEngine, CLIPEmbeddingFunction
+>>>>>>> master
 from ml.vector_store import VectorStore
 
 # Global variables for our ML engines
 clip_engine = None
 vector_store = None
 
+<<<<<<< HEAD
+=======
+def extract_embedding_sync(image):
+    """Synchronous wrapper for CLIP inference to be called from routes"""
+    return clip_engine.get_image_embedding(image)
+
+>>>>>>> master
 # This runs exactly once when you start the server
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global clip_engine, vector_store
     print("Starting up ML Engines...")
     clip_engine = CLIPEngine()
+<<<<<<< HEAD
     db_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "chromadb")
     vector_store = VectorStore(persist_directory=db_path)
+=======
+    
+    db_path = os.getenv("CHROMA_DB_PATH", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "chromadb"))
+    embedding_function = CLIPEmbeddingFunction(clip_engine)
+    vector_store = VectorStore(persist_directory=db_path, embedding_function=embedding_function)
+    
+>>>>>>> master
     print("API Server Ready!")
     yield
 
@@ -48,7 +67,11 @@ async def analyze_asset(file: UploadFile = File(...)):
         image = Image.open(io.BytesIO(contents)).convert("RGB")
         
         # 2. Extract the embeddings
+<<<<<<< HEAD
         embedding = clip_engine.get_image_embedding(image)
+=======
+        embedding = extract_embedding_sync(image)
+>>>>>>> master
         
         # 3. Query ChromaDB for closest matches
         results = vector_store.search_similar(embedding, top_k=3)
