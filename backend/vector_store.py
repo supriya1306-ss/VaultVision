@@ -1,12 +1,20 @@
+import os
 from qdrant_client import QdrantClient
 from qdrant_client.http.models import Distance, VectorParams, PointStruct
 import uuid
 
 class VectorStore:
     def __init__(self):
-        # Using memory storage for MVP local testing. 
-        # Swap with cloud credentials when ready: QdrantClient(url="...", api_key="...")
-        self.client = QdrantClient(":memory:")
+        qdrant_url = os.getenv("QDRANT_URL")
+        qdrant_api_key = os.getenv("QDRANT_API_KEY")
+        
+        if qdrant_url and qdrant_api_key:
+            print("Connecting to Qdrant Cloud...")
+            self.client = QdrantClient(url=qdrant_url, api_key=qdrant_api_key)
+        else:
+            print("Using in-memory Qdrant database (Local MVP Mode)")
+            self.client = QdrantClient(":memory:")
+            
         self.collection_name = "vaultvision_assets"
         
         # OpenAI CLIP base model outputs 512 dimensional vectors

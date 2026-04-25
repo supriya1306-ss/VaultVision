@@ -15,8 +15,9 @@ export default function Dashboard() {
     try {
       const result = await uploadOfficialAsset(file);
       alert(result.message || "Asset successfully registered to the Vault.");
-    } catch (error: any) {
-      alert(`Registration error: ${error.message}`);
+    } catch (error) {
+      const err = error as Error;
+      alert(`Registration error: ${err.message}`);
     } finally {
       setRegisterLoading(false);
     }
@@ -28,12 +29,13 @@ export default function Dashboard() {
     try {
       const result = await detectSuspiciousAsset(file);
       setReportData(result);
-    } catch (error: any) {
+    } catch (error) {
+      const err = error as Error;
       setReportData({
         is_protected: false,
         confidence: 0,
         matches: [],
-        error: error.message,
+        error: err.message,
       });
     } finally {
       setDetectLoading(false);
