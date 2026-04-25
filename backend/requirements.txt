@@ -7,3 +7,5 @@ transformers
 pillow
 google-genai
 python-multipart
+SQLAlchemy
+psycopg2-binary

@@ -2,6 +2,16 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from backend.api import router
+from backend.database import engine, Base
+import backend.models  # Import models so Base knows about them!
+
+# Create database tables if they don't exist
+if engine:
+    try:
+        Base.metadata.create_all(bind=engine)
+        print("Successfully checked/created database tables.")
+    except Exception as e:
+        print(f"Warning: Could not create tables: {e}")
 
 app = FastAPI(
     title="VaultVision API",
