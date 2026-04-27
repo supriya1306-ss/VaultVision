@@ -77,7 +77,7 @@ graph TD
 | Name | Role | Contributions |
 | :--- | :--- | :--- |
 | **[Your Name/Lead]** | Lead AI Architect & Backend | Architected the Hybrid AI pipeline, integrated Vertex AI & Gemini 1.5, and developed the FastAPI core. |
-| **[Member 2]** | Frontend Specialist | Developed the premium dashboard using Next.js 14, Framer Motion animations, and 3D visualizations with Three.js. |
+| **Supriya** | Frontend Specialist | Developed the premium dashboard using Next.js 14, Framer Motion animations, and 3D visualizations with Three.js. |
 | **[Member 3]** | Data Engineer & DevOps | Managed Qdrant vector store optimization, PostgreSQL schema design, and Google Cloud deployment (Cloud Run). |
 | **[Member 4]** | UI/UX & Product | Designed the user journey, handled legal prompt engineering for Gemini, and ensured SDG alignment. |
 
