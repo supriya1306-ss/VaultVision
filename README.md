@@ -1,4 +1,4 @@
-# VaultVision: AI-Powered Digital Asset Protection 🛡️
+# VaultVision: AI-Powered Digital Asset Protection <img src="frontend/public/logo.png" alt="VaultVision Logo" width="40" align="center"/> 🛡️
 
 [![Google Solution Challenge 2026](https://img.shields.io/badge/Google-Solution%20Challenge%202026-4285F4?style=for-the-badge&logo=google)](https://developers.google.com/community/gdsc-solution-challenge)
 [![Built with Gemini](https://img.shields.io/badge/Built%20with-Gemini%201.5-orange?style=for-the-badge&logo=google-gemini)](https://deepmind.google/technologies/gemini/)
