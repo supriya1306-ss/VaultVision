@@ -4,7 +4,7 @@
 [![Built with Gemini](https://img.shields.io/badge/Built%20with-Gemini%201.5-orange?style=for-the-badge&logo=google-gemini)](https://deepmind.google/technologies/gemini/)
 [![Tech Stack](https://img.shields.io/badge/Stack-Next.js%20|%20FastAPI%20|%20VertexAI-black?style=for-the-badge)](https://vaultvision.ai)
 
-**VaultVision** is a next-generation AI security ecosystem designed to protect sports media from unauthorized distribution and piracy. By leveraging Google's cutting-edge Generative AI and Multimodal Embeddings, VaultVision identifies infringements even through complex modifications (cropping, filtering, speed changes) and automatically generates legally actionable evidence.
+**VaultVision** represents our mission to protect valuable digital sports media using AI. “Vault” signifies strong security for digital assets, while “Vision” reflects our use of intelligent computer vision to detect and prevent unauthorized usage.
 
 ---
 
@@ -76,7 +76,7 @@ graph TD
 
 | Name | Role | Contributions |
 | :--- | :--- | :--- |
-| **[Your Name/Lead]** | Lead AI Architect & Backend | Architected the Hybrid AI pipeline, integrated Vertex AI & Gemini 1.5, and developed the FastAPI core. |
+| **[Gautam Bandil/Lead]** | Lead AI Architect & Backend | Architected the Hybrid AI pipeline, integrated Vertex AI & Gemini 1.5, and developed the FastAPI core. |
 | **Supriya** | Frontend Specialist | Developed the premium dashboard using Next.js 14, Framer Motion animations, and 3D visualizations with Three.js. |
 | **[Member 3]** | Data Engineer & DevOps | Managed Qdrant vector store optimization, PostgreSQL schema design, and Google Cloud deployment (Cloud Run). |
 | **Khushi Singh** | UI/UX & Product | Designed the user journey, handled legal prompt for Gemini |
