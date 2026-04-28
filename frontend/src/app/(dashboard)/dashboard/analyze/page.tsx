@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Search, UploadCloud, File, CheckCircle2, AlertTriangle, ShieldAlert, Download } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { API_BASE_URL } from "@/lib/api";
 
 interface MatchResult {
   asset_id: string;
@@ -38,7 +39,7 @@ export default function AnalyzeMediaPage() {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://localhost:8000/api/analyze", {
+      const response = await fetch(`${API_BASE_URL}/api/analyze`, {
         method: "POST",
         body: formData,
       });

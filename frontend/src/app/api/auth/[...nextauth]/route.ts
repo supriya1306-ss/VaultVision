@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import { API_BASE_URL } from "@/lib/api";
 
 const handler = NextAuth({
   providers: [
@@ -15,7 +16,7 @@ const handler = NextAuth({
     async signIn({ user, account }) {
       if (account?.provider === "google") {
         try {
-          const response = await fetch("http://localhost:8000/api/auth/google-sync", {
+          const response = await fetch(`${API_BASE_URL}/api/auth/google-sync`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

@@ -13,7 +13,15 @@ from typing import List
 from dotenv import load_dotenv
 
 # Load environment variables
-load_dotenv()
+env_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path=env_path)
+
+# Verify key loading
+api_key = os.getenv("GOOGLE_API_KEY")
+if api_key and api_key != "your_actual_key_here":
+    print(f"[OK] GOOGLE_API_KEY loaded: {api_key[:4]}...{api_key[-4:]}")
+else:
+    print("[WARNING] GOOGLE_API_KEY not set or using placeholder in backend/.env")
 
 # Allow importing from our folders
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -21,7 +29,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # VaultVision Imports
 from backend.api import AnalysisResponse, MatchResult
 from backend.models import Base, User, Detection
-from ml.clip_engine import CLIPEngine, CLIPEmbeddingFunction
+from ml.clip_engine import CLIPEngine
 from ml.vector_store import VectorStore
 from ml.evidence_engine import EvidenceEngine
 

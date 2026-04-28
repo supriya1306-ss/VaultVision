@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 
 import { useState, useEffect } from "react";
 import { generateVaultVisionPDF } from "@/lib/pdf-service";
+import { API_BASE_URL } from "@/lib/api";
 
 interface DetectionReport {
   id: number;
@@ -25,7 +26,7 @@ export default function ReportsPage() {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/history");
+        const response = await fetch(`${API_BASE_URL}/api/history`);
         if (response.ok) {
           const data = await response.json();
           setReports(data);

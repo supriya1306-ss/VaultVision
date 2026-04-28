@@ -34,19 +34,3 @@ class CLIPEngine:
         # 4. Return as a plain Python list
         return image_features.cpu().numpy().tolist()[0]
 
-from chromadb.api.types import EmbeddingFunction, Documents, Embeddings
-
-class CLIPEmbeddingFunction(EmbeddingFunction):
-    def __init__(self, clip_engine: CLIPEngine):
-        self.clip_engine = clip_engine
-        
-    def __call__(self, input: Documents) -> Embeddings:
-        """
-        Embeds the input documents (images or text depending on what we pass).
-        Since our vector store passes images to add_asset by manual embeddings,
-        this acts as the registered function for ChromaDB.
-        """
-        # If the input contains PIL Images or strings, we handle them.
-        # But mostly we provide the explicit embeddings.
-        return [self.clip_engine.get_image_embedding(i) for i in input]
-

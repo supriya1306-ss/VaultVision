@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ShieldAlert, Download, SlidersHorizontal, Eye } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { API_BASE_URL } from "@/lib/api";
 
 interface Detection {
   id: number;
@@ -30,7 +31,7 @@ export default function DetectionsPage() {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/history");
+        const response = await fetch(`${API_BASE_URL}/api/history`);
         if (response.ok) {
           const data = await response.json();
           setDetections(data);

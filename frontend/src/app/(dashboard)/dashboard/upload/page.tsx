@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { UploadCloud, File, X, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { API_BASE_URL } from "@/lib/api";
 
 export default function UploadMediaPage() {
   const [files, setFiles] = useState<{ name: string, size: string, status: string }[]>([]);
@@ -27,7 +28,7 @@ export default function UploadMediaPage() {
       formData.append("file", file);
 
       try {
-        const response = await fetch("http://localhost:8000/api/register", {
+        const response = await fetch(`${API_BASE_URL}/api/register`, {
           method: "POST",
           body: formData,
         });

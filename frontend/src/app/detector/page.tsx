@@ -5,6 +5,8 @@ import { Search, UploadCloud, CheckCircle2, AlertTriangle, ShieldAlert, Download
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
+import { API_BASE_URL } from "@/lib/api";
+
 interface MatchResult {
   asset_id: string;
   score: number;
@@ -38,7 +40,7 @@ export default function StandaloneDetectorPage() {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://localhost:8000/api/analyze", {
+      const response = await fetch(`${API_BASE_URL}/api/analyze`, {
         method: "POST",
         body: formData,
       });

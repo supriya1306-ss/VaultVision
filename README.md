@@ -1,6 +1,6 @@
 # <img src="frontend/public/logo.png" alt="VaultVision Logo" width="80" style="vertical-align: middle; margin-right: 8px;"/> VaultVision: AI-Powered Digital Asset Protection
 
-[![Google Solution Challenge 2026](https://img.shields.io/badge/Google-Solution%20Challenge%202026-4285F4?style=for-the-badge&logo=google)](https://developers.google.com/community/gdsc-solution-challenge)
+[![Google Solution Challenge 2026](https://img.shields.io/badge/Google-Solution%20Challenge%202026-4285F4?style=for-the-badge&logo=google)](https://hack2skill.com/event/solution-challenge-2026/dashboard/roadmap?utm_source=H2S&utm_medium=Googlers&utm_campaign=&utm_term=&utm_content=)
 [![Built with Gemini](https://img.shields.io/badge/Built%20with-Gemini%201.5-orange?style=for-the-badge&logo=google-gemini)](https://deepmind.google/technologies/gemini/)
 [![Tech Stack](https://img.shields.io/badge/Stack-Next.js%20|%20FastAPI%20|%20VertexAI-black?style=for-the-badge)](https://vaultvision.ai)
 
